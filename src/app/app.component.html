@@ -1,0 +1,13 @@
+<hello name="{{ name }}"></hello>
+<p>
+	Disable button according input validation erros
+</p>
+
+<form #myForm="ngForm">
+	<div class="form-group">
+		<label>Email</label>
+		<textarea [(ngModel)]="email" #emailInput="ngModel" name="my_email" type="text" class="form-control" required>
+    </textarea>
+		<button [disabled]="emailInput.errors?.required">Some action</button>
+	</div>
+</form>
